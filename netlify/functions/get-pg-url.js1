@@ -1,0 +1,43 @@
+const axios = require('axios');
+
+exports.handler = async function(event, context) {
+  const { game, userId } = event.queryStringParameters || {};
+
+  if (!game || !userId) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Parâmetros game e userId são obrigatórios.' }),
+    };
+  }
+
+  try {
+    const OPERATOR_TOKEN = 'SEU_OPERATOR_TOKEN_AQUI';
+    const SECRET_KEY = 'SUA_SECRET_KEY_AQUI';
+
+    const response = await axios.post('https://api.pgsoft.com/v1/launch-game', {
+      operator_token: OPERATOR_TOKEN,
+      player_id: userId,
+      game_code: game,
+      language: 'pt',
+      currency: 'BRL',
+      return_url: 'https://seusite.netlify.app/retorno',
+    }, {
+      headers: {
+        'Authorization': `Bearer ${SECRET_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ launchUrl: response.data.launch_url }),
+    };
+
+  } catch (error) {
+    console.error('Erro na API PG Soft:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Erro ao gerar URL do jogo.' }),
+    };
+  }
+};
