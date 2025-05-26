@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bisteca Casino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #f39c12;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px 0;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Bisteca Casino</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Jogos</a>
+            <a href="#">Promoções</a>
+            <a href="#">VIP</a>
+        </nav>
+        <div class="language-selector">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" title="English" onclick="setLanguage('en')">
+            <img src="https://flagcdn.com/w40/es.png" alt="Español" title="Español" onclick="setLanguage('es')">
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="pg-title">Top 5 Jogos da PG Soft</h2>
+            <ul id="pg-list">
+                <li>Mahjong Ways</li>
+                <li>Lucky Neko</li>
+                <li>Caishen Wins</li>
+                <li>Treasures of Aztec</li>
+                <li>Ganesha Gold</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="spribe-title">Top 5 Jogos da Spribe</h2>
+            <ul id="spribe-list">
+                <li>Aviator</li>
+                <li>Mines</li>
+                <li>Plinko</li>
+                <li>Dice</li>
+                <li>HiLo</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const content = {
+            en: {
+                pgTitle: "Top 5 PG Soft Games",
+                spribeTitle: "Top 5 Spribe Games",
+                pgGames: [
+                    "Mahjong Ways",
+                    "Lucky Neko",
+                    "Caishen Wins",
+                    "Treasures of Aztec",
+                    "Ganesha Gold"
+                ],
+                spribeGames: [
+                    "Aviator",
+                    "Mines",
+                    "Plinko",
+                    "Dice",
+                    "HiLo"
+                ]
+            },
+            es: {
+                pgTitle: "Top 5 Juegos de PG Soft",
+                spribeTitle: "Top 5 Juegos de Spribe",
+                pgGames: [
+                    "Mahjong Ways",
+                    "Lucky Neko",
+                    "Caishen Wins",
+                    "Treasures of Aztec",
+                    "Ganesha Gold"
+                ],
+                spribeGames: [
+                    "Aviador",
+                    "Minas",
+                    "Plinko",
+                    "Dado",
+                    "Más o Menos"
+                ]
+            }
+        };
+
+        function setLanguage(lang) {
+            document.getElementById('pg-title').innerText = content[lang].pgTitle;
+            document.getElementById('spribe-title').innerText = content[lang].spribeTitle;
+
+            const pgList = document.getElementById('pg-list');
+            pgList.innerHTML = content[lang].pgGames.map(game => `<li>${game}</li>`).join("");
+
+            const spribeList = document.getElementById('spribe-list');
+            spribeList.innerHTML = content[lang].spribeGames.map(game => `<li>${game}</li>`).join("");
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Bisteca Casino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1c1c1c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #f39c12;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 10px 0;
+      font-size: 18px;
+    }
+
+    ul li a {
+      color: #f39c12;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #game-details {
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
+
+    #game-details img {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .play-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Bisteca Casino</div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Jogos</a>
+      <a href="#">Promoções</a>
+      <a href="#">VIP</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Top Jogos da PG Soft</h2>
+    <ul>
+      <li><a onclick="loadGame('mahjong')">Mahjong Ways</a></li>
+      <li><a onclick="loadGame('neko')">Lucky Neko</a></li>
+      <li><a onclick="loadGame('caishen')">Caishen Wins</a></li>
+      <li><a onclick="loadGame('aztec')">Treasures of Aztec</a></li>
+      <li><a onclick="loadGame('ganesha')">Ganesha Gold</a></li>
+    </ul>
+
+    <h2>Top Jogos da Spribe</h2>
+    <ul>
+      <li><a onclick="loadGame('aviator')">Aviator</a></li>
+      <li><a onclick="loadGame('mines')">Mines</a></li>
+      <li><a onclick="loadGame('plinko')">Plinko</a></li>
+      <li><a onclick="loadGame('dice')">Dice</a></li>
+      <li><a onclick="loadGame('hilo')">HiLo</a></li>
+    </ul>
+
+    <div id="game-details">
+      <p>Clique em um jogo para ver os detalhes aqui.</p>
+    </div>
+  </main>
+
+  <script>
+    const games = {
+      mahjong: {
+        name: "Mahjong Ways",
+        description: "Jogo inspirado no tradicional Mahjong asiático com gráficos incríveis e bônus especiais.",
+        image: "https://via.placeholder.com/600x300?text=Mahjong+Ways"
+      },
+      neko: {
+        name: "Lucky Neko",
+        description: "O famoso gato da sorte japonês traz bônus e multiplicadores incríveis.",
+        image: "https://via.placeholder.com/600x300?text=Lucky+Neko"
+      },
+      caishen: {
+        name: "Caishen Wins",
+        description: "O deus da fortuna está pronto para te recompensar com rodadas grátis.",
+        image: "https://via.placeholder.com/600x300?text=Caishen+Wins"
+      },
+      aztec: {
+        name: "Treasures of Aztec",
+        description: "Explore as riquezas das ruínas astecas neste slot cheio de mistérios.",
+        image: "https://via.placeholder.com/600x300?text=Aztec+Treasure"
+      },
+      ganesha: {
+        name: "Ganesha Gold",
+        description: "O deus indiano Ganesha te guia por uma jornada de ouro e prosperidade.",
+        image: "https://via.placeholder.com/600x300?text=Ganesha+Gold"
+      },
+      aviator: {
+        name: "Aviator",
+        description: "Jogo de crash onde você deve sair antes que o avião decole para longe.",
+        image: "https://via.placeholder.com/600x300?text=Aviator"
+      },
+      mines: {
+        name: "Mines",
+        description: "Evite as minas e encontre as estrelas para aumentar seus ganhos.",
+        image: "https://via.placeholder.com/600x300?text=Mines"
+      },
+      plinko: {
+        name: "Plinko",
+        description: "Solte a bola e veja onde ela cai — uma experiência cheia de emoção.",
+        image: "https://via.placeholder.com/600x300?text=Plinko"
+      },
+      dice: {
+        name: "Dice",
+        description: "Role os dados e aposte alto — sorte e estratégia combinadas.",
+        image: "https://via.placeholder.com/600x300?text=Dice"
+      },
+      hilo: {
+        name: "HiLo",
+        description: "Adivinhe se a próxima carta será maior ou menor. Simples e viciante!",
+        image: "https://via.placeholder.com/600x300?text=HiLo"
+      }
+    };
+
+    function loadGame(key) {
+      const game = games[key];
+      document.getElementById('game-details').innerHTML = `
+        <h3>${game.name}</h3>
+        <p>${game.description}</p>
+        <img src="${game.image}" alt="${game.name}">
+        <br><a class="play-btn" href="#">Jogar Agora</a>
+      `;
+    }
+  </script>
+</body>
+</html>
+
