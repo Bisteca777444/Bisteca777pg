@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bisteca Casino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .language-selector img {
+            width: 32px;
+            height: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #f39c12;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px 0;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Bisteca Casino</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Jogos</a>
+            <a href="#">Promoções</a>
+            <a href="#">VIP</a>
+        </nav>
+        <div class="language-selector">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" title="English" onclick="setLanguage('en')">
+            <img src="https://flagcdn.com/w40/es.png" alt="Español" title="Español" onclick="setLanguage('es')">
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="pg-title">Top 5 Jogos da PG Soft</h2>
+            <ul id="pg-list">
+                <li>Mahjong Ways</li>
+                <li>Lucky Neko</li>
+                <li>Caishen Wins</li>
+                <li>Treasures of Aztec</li>
+                <li>Ganesha Gold</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="spribe-title">Top 5 Jogos da Spribe</h2>
+            <ul id="spribe-list">
+                <li>Aviator</li>
+                <li>Mines</li>
+                <li>Plinko</li>
+                <li>Dice</li>
+                <li>HiLo</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const content = {
+            en: {
+                pgTitle: "Top 5 PG Soft Games",
+                spribeTitle: "Top 5 Spribe Games",
+                pgGames: [
+                    "Mahjong Ways",
+                    "Lucky Neko",
+                    "Caishen Wins",
+                    "Treasures of Aztec",
+                    "Ganesha Gold"
+                ],
+                spribeGames: [
+                    "Aviator",
+                    "Mines",
+                    "Plinko",
+                    "Dice",
+                    "HiLo"
+                ]
+            },
+            es: {
+                pgTitle: "Top 5 Juegos de PG Soft",
+                spribeTitle: "Top 5 Juegos de Spribe",
+                pgGames: [
+                    "Mahjong Ways",
+                    "Lucky Neko",
+                    "Caishen Wins",
+                    "Treasures of Aztec",
+                    "Ganesha Gold"
+                ],
+                spribeGames: [
+                    "Aviador",
+                    "Minas",
+                    "Plinko",
+                    "Dado",
+                    "Más o Menos"
+                ]
+            }
+        };
+
+        function setLanguage(lang) {
+            document.getElementById('pg-title').innerText = content[lang].pgTitle;
+            document.getElementById('spribe-title').innerText = content[lang].spribeTitle;
+
+            const pgList = document.getElementById('pg-list');
+            pgList.innerHTML = content[lang].pgGames.map(game => `<li>${game}</li>`).join("");
+
+            const spribeList = document.getElementById('spribe-list');
+            spribeList.innerHTML = content[lang].spribeGames.map(game => `<li>${game}</li>`).join("");
+        }
+    </script>
+</body>
+</html>
