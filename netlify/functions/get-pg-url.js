@@ -91,21 +91,30 @@
 <main>
   <h2>Top Jogos da PG Soft</h2>
   <ul>
-    <li><a onclick="loadGame('mahjong')">Mahjong Ways</a></li>
-    <li><a onclick="loadGame('neko')">Lucky Neko</a></li>
-    <li><a onclick="loadGame('caishen')">Caishen Wins</a></li>
-    <li><a onclick="loadGame('aztec')">Treasures of Aztec</a></li>
-    <li><a onclick="loadGame('ganesha')">Ganesha Gold</a></li>
-  </ul>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('mahjong')">Mahjong Ways</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('neko')">Lucky Neko</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('caishen')">Caishen Wins</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('aztec')">Treasures of Aztec</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('ganesha')">Ganesha Gold</a></li>
+</ul>
+
+<ul>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('aviator')">Aviator</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('mines')">Mines</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('plinko')">Plinko</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('dice')">Dice</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('hilo')">HiLo</a></li>
+</ul>
+
 
   <h2>Top Jogos da Spribe</h2>
   <ul>
-    <li><a onclick="loadGame('aviator')">Aviator</a></li>
-    <li><a onclick="loadGame('mines')">Mines</a></li>
-    <li><a onclick="loadGame('plinko')">Plinko</a></li>
-    <li><a onclick="loadGame('dice')">Dice</a></li>
-    <li><a onclick="loadGame('hilo')">HiLo</a></li>
-  </ul>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('aviator')">Aviator</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('mines')">Mines</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('plinko')">Plinko</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('dice')">Dice</a></li>
+  <li><a href="#" onclick="event.preventDefault(); loadGame('hilo')">HiLo</a></li>
+</ul>
 
   <div id="game-details">
     <p>Clique em um jogo para ver os detalhes aqui.</p>
